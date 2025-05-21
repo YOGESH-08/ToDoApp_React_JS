@@ -1,5 +1,7 @@
 import React,{useEffect, useState} from "react";
-import "./App.css"
+import "./App.css";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -40,7 +42,7 @@ function clearAll(){
     setNewTask("");
     setTask([]);
     setAnyThingThere(false);
-    setStartAdd(false);
+    
   }
 }
 
@@ -87,6 +89,7 @@ function handleInputChange(event){
 }
 },[startAdd]);
 
+
  
 
 
@@ -113,6 +116,22 @@ function handleInputChange(event){
   >
     <p>{todo.text}</p><br />
     <p className="date">{todo.date}</p>
+    <div
+    onClick = {(e)=>{
+        e.stopPropagation();
+      const filtered = task.filter((toDel,i)=>i!==index);
+      setTask(filtered);
+      if(filtered.length==0){
+        setAnyThingThere(false);
+        setStartAdd(false);
+        handleWindow();
+      }
+    }}>
+      <IconButton 
+      aria-label="delete" disabled color="primary">
+        <DeleteIcon  />
+      </IconButton>
+  </div>
   </div>
 ))}
 
