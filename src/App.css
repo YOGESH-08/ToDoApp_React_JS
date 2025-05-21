@@ -1,0 +1,184 @@
+body{
+  margin: 0px;
+  background-color: azure;
+}
+
+.header{
+  display: flex;
+  background-color: black;
+  color: rgb(230, 138, 53);
+  font-family: "Poetsen One";
+  font-size: 20px;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+
+}
+
+.header button {
+  background: linear-gradient(270deg, orange, pink, tomato, orange);
+  background-size: 600% 600%;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: "Poetsen One";
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  transition: 0.3s ease;
+}
+
+.header button:hover {
+  animation: rainbow 3s ease infinite;
+  transform: scale(1.05);
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  font-size: 50px;
+  background: linear-gradient(270deg, orange, deeppink, violet, orange);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.enterTask{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-family: "Poetsen One";
+  font-size: 30px;
+}
+.enterTask input{
+  border-radius: 30px;
+  width: 220px;
+  height: 50px;
+}
+
+.enterTask button{
+    background: linear-gradient(270deg, orange, pink, tomato, orange);
+  background-size: 600% 600%;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: "Poetsen One";
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  transition: 0.3s ease;  
+  margin-left: 10px;
+}
+
+.enterTask button:hover {
+  animation: rainbow 3s ease infinite;
+  transform: scale(1.05);
+}
+
+
+
+.todocard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  padding: 15px;
+  background: linear-gradient(135deg, #ffa500, #ff6347);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.Card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.Card .date {
+  font-size: 12px;
+  color: #222;
+  margin-top: auto;
+  text-align: center;
+  font-weight: normal;
+}
+
+
+.footer{
+  position: fixed;
+  display: flex;
+  color: rgb(230, 138, 53);
+  font-family: "Poetsen One";
+  font-size: 20px;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+   position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+
+}
+
+
+.footer button{
+  margin-left: 42vw;
+   background: linear-gradient(270deg, red, red, tomato, red);
+  background-size: 600% 600%;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: "Poetsen One";
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  transition: 0.3s ease;
+}
+
+.footer button:hover {
+  animation: rainbow 3s ease infinite;
+  transform: scale(1.05);
+}
+
+.transparent{
+  color: rgb(103, 101, 101);
+  text-align: center;
+  margin: 200px 0px;
+  font-size: 70px;
+   font-family: "Poetsen One";
+   opacity:0.09;
+
+}
