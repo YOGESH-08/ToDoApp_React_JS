@@ -49,7 +49,8 @@ function handleAddTaskClick() {
   if (newTask.trim() !== "") {
     const taskObj = {
       text: newTask.trim(),
-      date: new Date().toLocaleString(), 
+      date: new Date().toLocaleString(),
+      completed : false
     };
     setTask((prev) => [...prev, taskObj]);
     setNewTask("");
@@ -98,18 +99,23 @@ function handleInputChange(event){
       {startAdd ? taskWindow():handleWindow()}
   </div>
     <div className="todocard">
+
+
   {task.map((todo, index) => (
-    <div className="Card" key={index} onClick ={()=>{
-      const filtered = task.filter((deltask,i)=>i!==index);
-      setTask(filtered);
-         if (filtered.length === 0) {
-        setAnyThingThere(false);
-      }
-    }}>
-      <p>{todo.text}</p><br />
-      <p className="date">{todo.date}</p>
-    </div>
-  ))}
+  <div
+    className={`Card ${todo.completed ? 'completed' : ''}`}
+    key={index}
+    onClick={() => {
+      const updatedTasks = [...task];
+      updatedTasks[index].completed = !updatedTasks[index].completed;
+      setTask(updatedTasks);
+    }}
+  >
+    <p>{todo.text}</p><br />
+    <p className="date">{todo.date}</p>
+  </div>
+))}
+
 
   
 </div>

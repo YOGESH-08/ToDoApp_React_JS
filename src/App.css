@@ -182,3 +182,10 @@ body{
    opacity:0.09;
 
 }
+
+.Card.completed {
+  background: linear-gradient(135deg, #a8e063, #56ab2f); /* light to dark green */
+  color: white;
+  transition: background 0.4s ease;
+}
+
