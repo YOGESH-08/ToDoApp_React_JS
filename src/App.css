@@ -184,12 +184,23 @@ body{
 }
 
 .Card.completed {
-  background: linear-gradient(135deg, #a8e063, #56ab2f); /* light to dark green */
+  background: linear-gradient(135deg, #a8e063, #56ab2f); 
   color: white;
-  transition: background 0.4s ease;
+  transition: 0.4s ease;
 }
 
 
-.dustbin {
-  background-color: red;
+
+.dustbin:hover{
+  border-radius: 50%;
+  background-color: rgb(255, 85, 0);
+  opacity: 1;
+}
+
+.edit{
+  width: 20px;
+  opacity: 0.5;
+}
+.edit:hover{
+  opacity: 1;
 }
