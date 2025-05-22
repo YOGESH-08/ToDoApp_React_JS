@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import "./App.css";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Button from "./Button";
 
 
 
@@ -38,11 +39,13 @@ function handleWindow(){
 }
 
 function clearAll(){
+  
   if(anyThingThere){
     setNewTask("");
     setTask([]);
     setAnyThingThere(false);
-    
+    setStartAdd(false);
+    handleWindow();
   }
 }
 
@@ -57,7 +60,7 @@ function handleAddTaskClick() {
     setTask((prev) => [...prev, taskObj]);
     setNewTask("");
     setStartAdd(false);
-    setAnyThingThere("true");
+    setAnyThingThere(true);
   }
 }
 
@@ -75,7 +78,7 @@ function handleInputChange(event){
       <label htmlFor="item">New Task &nbsp;</label>
       <input type="text" value={newTask} onChange={handleInputChange}
       onKeyDown={handleKeyDownInput}/>
-      <button className="addtask" onClick={handleAddTaskClick}>Add Task</button>
+      <Button className="addtask" onClick={handleAddTaskClick} value = "Add Task" />
   </div>);
     
   }
@@ -97,7 +100,7 @@ function handleInputChange(event){
   <div className="container">
     <div className="header">
       <h1 className="gradient-text">To-Do</h1>
-      <button onClick={handleAddClick}>Add + </button>
+      <Button onClick={handleAddClick} value="Add +" /> 
     </div>
       {startAdd ? taskWindow():handleWindow()}
   </div>
@@ -139,7 +142,7 @@ function handleInputChange(event){
   
 </div>
 <div className="footer">
-    <button onClick={clearAll}>Clear All</button>
+    <Button onClick={clearAll} value="Clear All" />
   </div>
 
     </>;
