@@ -204,3 +204,9 @@ body{
 .edit:hover{
   opacity: 1;
 }
+
+
+.editBar{
+  border-radius: 10px;
+  background-color: #f4bf9b;
+}
